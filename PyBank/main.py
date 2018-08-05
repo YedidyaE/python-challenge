@@ -30,7 +30,7 @@ with open(csv_filepath, newline="") as csv_file:
         #find total months by going down the rows
         total_months = total_months + 1
         current_value = int(row[1])
-        #print(current_value)
+       
         #find total by adding the monetary value in each row
         net_total = net_total + current_value
         
@@ -42,7 +42,7 @@ with open(csv_filepath, newline="") as csv_file:
         previous_value = current_value
         
         #Set if conditions to find the max and min changes by comparing to current change
-        #print("current change:", current_change)
+       
         if (current_change is not None and current_change > max_change):
                      max_change = current_change
             #find corresponding month value for maximum change
@@ -55,7 +55,7 @@ with open(csv_filepath, newline="") as csv_file:
 #find average change between months
     average_change =  sum(changes)/len(changes)    
 
-
+#create a variable to hold a multi line string
 output = f"""Financial Analysis
 ------------------------------
 Total Months : {total_months}
@@ -65,9 +65,9 @@ Greatest Increase in Profits : ${max_change} ({max_month})
 Greatest Decrease in Profits : ${min_change} ({min_month})"""
 print (output)
 
-#export as txt file
+#export the output as a txt file
 
-file_to_output = "final_output.txt"
+file_to_output = "pybank_output.txt"
 with open(file_to_output, 'w') as txt_file:
     txt_file.write(output)
   
