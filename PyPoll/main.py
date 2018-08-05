@@ -62,8 +62,7 @@ print (output)
 #export as a txt  file
 file_to_output = "pypoll_output.txt"
 with open(file_to_output, 'w') as txt_file:
-     txt_file.write(outpu
-     t)
+     txt_file.write(output)
   
 
 
